@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap");
+
+:root {
+  --color-blue: hsl(223, 87%, 63%);
+  --color-pale-blue: hsl(223, 100%, 88%);
+  --color-light-red: hsl(354, 100%, 66%);
+  --color-gray: hsl(0, 0%, 59%);
+  --color-very-dark-blue: hsl(209, 33%, 12%);
+
+  --input-padding: 10px 20px;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 5px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 2rem;
+}
+
+.container {
+  width: 50%;
+  max-width: 96rem;
+  margin: 5rem auto;
+  text-align: center;
+}
+
+.main-heading {
+  color: var(--color-gray);
+  font-weight: 300;
+  margin-bottom: 1.4rem;
+}
+
+.heading-accent {
+  font-weight: 700;
+  color: var(--color-very-dark-blue);
+}
+
+.subscription-message {
+  margin-bottom: 2.4rem;
+  color: var(--color-very-dark-blue);
+}
+
+.subscription-form {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.email-input-container {
+  position: relative;
+  width: 50%;
+}
+
+.email-input {
+  border: 1px solid var(--color-pale-blue);
+  padding: var(--input-padding);
+  border-radius: 20rem;
+  outline: none;
+  color: var(--color-blue);
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+::placeholder {
+  font-size: 1.4rem;
+  color: var(--color-pale-blue);
+}
+
+.subscription-cta {
+  background-color: var(--color-blue);
+  padding: var(--input-padding);
+  color: #fff;
+  font-size: 1.4rem;
+  border-radius: 24rem;
+  outline: none;
+  border: none;
+  box-shadow: rgba(79, 125, 243, 0.4) 0px 10px 15px -5px,
+    rgba(79, 125, 243, 0.05) 0px 4px 6px -2px;
+  cursor: pointer;
+  width: 25%;
+}
+
+.subscription-cta:hover,
+.subscription-cta:active {
+  background-color: hsla(223, 87%, 63%, 0.8);
+}
+
+.hero-image-container {
+  margin-bottom: 15rem;
+}
+
+.hero-image {
+  width: 80%;
+}
+
+.social-icons {
+  margin-top: 6rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.social-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-pale-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--color-blue);
+}
+
+.social-icon:hover {
+  color: hsl(0, 0%, 100%);
+  background-color: var(--color-blue);
+}
+
+.copyright {
+  color: var(--color-gray);
+  font-size: 1.4rem;
+}
+
+.input-error .email-input {
+  color: var(--color-light-red);
+  border: 1px solid var(--color-light-red);
+}
+
+.input-error .email-input::placeholder {
+  color: var(--color-light-red);
+}
+
+.input-error::after {
+  content: "Please provide a valid email address";
+  display: block;
+  position: absolute;
+  left: 2rem;
+  bottom: -2rem;
+  color: var(--color-light-red);
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* Width <= 1024px */
+@media screen and (max-width: 64em) {
+  .container {
+    width: 60%;
+  }
+}
+
+/* Width <= 912px */
+@media screen and (max-width: 57em) {
+  .input-error::after {
+    font-size: 1rem;
+  }
+}
+
+/* Width <= 720px */
+@media screen and (max-width: 45em) {
+  html {
+    font-size: 50%;
+  }
+
+  .container {
+    width: 70%;
+  }
+}
+
+/* Width <= 576px */
+@media screen and (max-width: 36em) {
+  .header-logo {
+    display: inline-block;
+    width: 10rem;
+  }
+
+  .main-heading {
+    font-size: 3.5rem;
+    margin-bottom: 2.8rem;
+  }
+
+  .subscription-message {
+    font-size: 1.8rem;
+    margin-bottom: 4rem;
+  }
+
+  .subscription-form {
+    flex-direction: column;
+    gap: 2.2rem;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .email-input-container,
+  .subscription-cta {
+    width: 100%;
+  }
+
+  .input-error::after {
+    bottom: -1.5rem;
+  }
+}
+
+/* Width <= 400px */
+@media screen and (max-width: 25em) {
+  .container {
+    width: 85%;
+  }
+
+  .main-heading {
+    font-size: 2.8rem;
+  }
+
+  .header-logo {
+    width: 6rem;
+  }
+}
